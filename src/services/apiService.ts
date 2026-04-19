@@ -49,7 +49,7 @@ export const calcPayroll = async (
     baseSalary = Number(employee[0].baseSalary);
 
     // Calculate Payroll
-    salaryPerHour = Math.ceil(((baseSalary/30/8) * 100) / 100); //Round to 2 decimal places
+    salaryPerHour = Math.ceil(((baseSalary/30/8) * 100)) / 100; //Round to 2 decimal places
     if (workDate && workDate.length > 0) {
         workDate.forEach((work) => {
             const { day, workHour } = work;
@@ -64,12 +64,12 @@ export const calcPayroll = async (
         });
     }
 
-    result.totalNormalPay = Math.ceil(((result.totalNormalHours * salaryPerHour) * 100) / 100);
+    result.totalNormalPay = Math.ceil(((result.totalNormalHours * salaryPerHour) * 100)) / 100;
     if (result.totalNormalPay > baseSalary) {
         result.totalNormalPay = baseSalary;
     }
 
-    result.totalOtPay = Math.ceil(((result.totalOtHours * salaryPerHour * 1.5) * 100) / 100);
+    result.totalOtPay = Math.ceil(((result.totalOtHours * salaryPerHour * 1.5) * 100)) / 100;
     result.totalCompensation = result.totalNormalPay + result.totalOtPay;
 
     return result;
