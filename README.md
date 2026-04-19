@@ -1,2 +1,13 @@
-How to install: npm install
-How to run: npm run dev
+## 🚀 Getting Started
+
+### 📦 Install dependencies
+
+```bash
+npm install
+```
+
+### 📦 Run
+
+```bash
+npm run dev
+```
